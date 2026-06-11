@@ -12,11 +12,10 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
   body{font-family:'Inter',system-ui,sans-serif;color:var(--chalk);background:var(--ink);min-height:100vh;position:relative;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(120% 80% at 50% -10%,rgba(39,180,92,.28),transparent 60%),repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 64px,rgba(0,0,0,0) 64px 128px)}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(120% 80% at 50% -10%, rgba(39,180,92,.28), transparent 60%),repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 64px, rgba(0,0,0,0) 64px 128px)}
   .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 18px 72px}
 
-  /* INTRO */
-  #intro{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(120% 90% at 50% 0%,rgba(39,180,92,.30),transparent 62%),var(--ink);transition:opacity .55s ease,visibility .55s ease}
+  #intro{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(120% 90% at 50% 0%, rgba(39,180,92,.30), transparent 62%), var(--ink);transition:opacity .55s ease, visibility .55s ease}
   #intro.gone{opacity:0;visibility:hidden;pointer-events:none}
   .crest{font-size:64px;line-height:1;filter:drop-shadow(0 6px 18px rgba(246,200,76,.35));animation:bob 3s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -24,23 +23,18 @@
   .intro-title{font-family:'Anton',sans-serif;font-weight:400;line-height:.92;font-size:clamp(44px,11vw,108px);color:var(--chalk);text-transform:uppercase}
   .intro-title em{font-style:normal;color:var(--grass)}
   .intro-sub{color:var(--muted);max-width:31ch;margin:18px auto 30px;font-size:15px;line-height:1.6}
-  .kick{font-family:'Anton',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:20px;color:var(--ink);background:var(--gold);border:none;border-radius:999px;padding:16px 40px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 10px 30px rgba(246,200,76,.30)}
+  .kick{font-family:'Anton',sans-serif;letter-spacing:.06em;text-transform:uppercase;font-size:20px;color:var(--ink);background:var(--gold);border:none;border-radius:999px;padding:16px 40px;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;box-shadow:0 10px 30px rgba(246,200,76,.30)}
   .kick:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 14px 38px rgba(246,200,76,.42)}
   .kick:active{transform:translateY(0) scale(.99)}
-  .skip-link{margin-top:18px;font-size:13px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-  .skip-link:hover{color:var(--chalk)}
 
-  /* STAGE */
-  #stage{position:fixed;inset:0;z-index:49;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(120% 90% at 50% 40%,rgba(39,180,92,.30),transparent 62%),var(--ink);transition:opacity .45s ease}
-  #stage.show{display:flex}
-  #stage.fade{opacity:0}
+  #stage{position:fixed;inset:0;z-index:49;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(120% 90% at 50% 40%, rgba(39,180,92,.30), transparent 62%), var(--ink);transition:opacity .45s ease}
+  #stage.show{display:flex} #stage.fade{opacity:0;pointer-events:none}
   .stage-label{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px}
   .reel{display:flex;flex-direction:column;align-items:center;gap:10px;min-height:150px;justify-content:center}
   .reel-flag{font-size:84px;line-height:1}
   .reel-name{font-family:'Anton',sans-serif;font-size:clamp(30px,8vw,56px);text-transform:uppercase;color:var(--chalk);line-height:1}
   .stage-foot{margin-top:24px;color:var(--muted);font-size:14px;letter-spacing:.04em}
 
-  /* HEADER */
   header{padding:40px 0 8px;text-align:center}
   .h-crest{font-size:34px;line-height:1}
   h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(34px,7vw,64px);margin:8px 0 4px;line-height:.95}
@@ -51,46 +45,26 @@
   .fair{max-width:600px;margin:20px auto 0;text-align:center;font-size:13px;line-height:1.65;color:var(--muted)}
   .fair b{color:var(--chalk);font-weight:600}
 
-  /* STATS */
   .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px;margin:26px auto 4px}
   .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-align:center}
   .stat .lab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
   .stat .who{font-family:'Anton',sans-serif;font-size:26px;line-height:1}
-  .stat.dream .who{color:var(--gold)}
-  .stat.tough .who{color:var(--grass)}
-  .stat .flags{font-size:18px;margin-top:6px;letter-spacing:2px}
+  .stat.dream .who{color:var(--gold)} .stat.tough .who{color:var(--grass)}
   .stat .sub{font-size:12px;color:var(--muted);margin-top:4px}
 
-  /* CONTROLS */
-  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin:26px 0 10px}
-  .key{display:flex;gap:16px;flex-wrap:wrap}
+  .bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin:22px 0 16px}
+  .key{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
   .key span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
   .dot{width:10px;height:10px;border-radius:50%}
-  .dot.s{background:var(--gold)}
-  .dot.m{background:var(--grass)}
-  .dot.l{background:var(--muted)}
-  .sort-tabs{display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px}
-  .sort-tab{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:6px 14px;border-radius:999px;border:none;background:none;color:var(--muted);cursor:pointer;transition:background .15s,color .15s}
-  .sort-tab.active{background:var(--grass);color:var(--ink)}
-  .sort-tab:hover:not(.active){color:var(--chalk)}
-
-  /* SEARCH ROW */
-  .search-row{display:flex;gap:10px;align-items:center;margin:6px 0 20px}
-  .search{position:relative;flex:1;max-width:340px}
-  .search input{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--chalk);border-radius:999px;padding:12px 18px 12px 42px;font-size:15px;font-family:inherit;outline:none;transition:border-color .15s}
+  .dot.s{background:var(--gold)} .dot.m{background:var(--grass)} .dot.l{background:var(--muted)}
+  .search{position:relative;width:100%;max-width:340px;margin:8px auto 26px}
+  .search input{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--chalk);border-radius:999px;padding:12px 18px 12px 42px;font-size:15px;font-family:inherit;outline:none;transition:border-color .15s ease}
   .search input::placeholder{color:var(--muted)}
   .search input:focus{border-color:var(--grass)}
-  .search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round}
-  .view-btns{display:flex;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:4px}
-  .view-btn{border:none;background:none;color:var(--muted);cursor:pointer;border-radius:7px;padding:7px 10px;transition:background .14s,color .14s;display:flex;align-items:center}
-  .view-btn.active{background:rgba(39,180,92,.2);color:var(--grass)}
-  .view-btn:hover:not(.active){color:var(--chalk)}
-  .view-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+  .search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:var(--muted)}
 
-  /* CARDS */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:16px}
-  .card{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35);opacity:1;transform:translateY(0)}
-  .pre-reveal .card{opacity:0;transform:translateY(22px)}
+  .card{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;overflow:hidden;opacity:0;transform:translateY(22px);box-shadow:0 18px 40px rgba(0,0,0,.35)}
   .revealed .card{animation:pop .55s cubic-bezier(.2,.8,.25,1) forwards}
   @keyframes pop{to{opacity:1;transform:translateY(0)}}
   .card.dim{opacity:.16;filter:grayscale(.6)}
@@ -99,7 +73,7 @@
   .pname{font-family:'Anton',sans-serif;font-size:25px;text-transform:uppercase;color:var(--chalk);line-height:1}
   .pnum{font-family:'Anton',sans-serif;font-size:14px;color:var(--gold-deep)}
   .rows{padding:6px 10px}
-  .row{display:flex;align-items:center;gap:12px;padding:10px 8px;border-bottom:1px solid var(--line);border-radius:10px;cursor:pointer;transition:background .14s}
+  .row{display:flex;align-items:center;gap:12px;padding:10px 8px;border-bottom:1px solid var(--line);border-radius:10px;cursor:pointer;transition:background .14s ease}
   .row:last-child{border-bottom:none}
   .row:hover{background:rgba(39,180,92,.10)}
   .flag{font-size:26px;line-height:1;width:32px;text-align:center;flex:none}
@@ -112,504 +86,209 @@
   .pill.l{color:var(--chalk);background:rgba(243,242,233,.13)}
   .hand{padding:11px 18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--gold);letter-spacing:.03em;display:flex;justify-content:space-between;align-items:center}
   .hand b{color:var(--chalk);font-weight:600}
-  .share-btn{background:none;border:1px solid var(--line);cursor:pointer;color:var(--muted);padding:5px 10px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;gap:5px;transition:color .14s,border-color .14s}
-  .share-btn:hover{color:var(--chalk);border-color:rgba(243,242,233,.3)}
-  .share-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;flex:none}
+  .hand .tap{color:var(--muted);font-weight:400;font-size:11px}
+
   .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0;font-size:15px}
+  footer{text-align:center;color:var(--muted);font-size:13px;line-height:1.7;margin-top:42px}
+  footer b{color:var(--chalk);font-weight:600}
 
-  /* GROUP VIEW */
-  #group-view{display:none}
-  #group-view.active{display:block}
-  #card-view.hidden{display:none}
-  .group-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-  .grp-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  .grp-head{padding:10px 14px;background:linear-gradient(90deg,rgba(39,180,92,.18),transparent);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
-  .grp-label{font-family:'Anton',sans-serif;font-size:16px;text-transform:uppercase;color:var(--gold)}
-  .grp-count{font-size:11px;color:var(--muted)}
-  .grp-teams{padding:8px 10px}
-  .grp-team{display:flex;align-items:center;gap:8px;padding:7px 6px;border-radius:8px;cursor:pointer;transition:background .12s}
-  .grp-team:hover{background:rgba(39,180,92,.08)}
-  .grp-flag{font-size:20px;width:26px;text-align:center;flex:none}
-  .grp-name{font-size:13px;font-weight:600;flex:1}
-  .grp-owner{font-size:11px;color:var(--muted);background:rgba(243,242,233,.07);border-radius:6px;padding:2px 7px;flex:none}
-  .grp-owner.nobody{opacity:.35}
-
-  /* MODAL */
-  #modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,10,6,.75)}
+  /* team modal */
+  #modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,10,6,.72)}
   #modal.open{display:flex}
   .sheet{background:var(--panel-2);border:1px solid var(--line);border-radius:20px;max-width:440px;width:100%;max-height:86vh;overflow:auto;box-shadow:0 30px 70px rgba(0,0,0,.5)}
   .sheet-top{display:flex;align-items:center;gap:14px;padding:20px 22px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel-2)}
   .sheet-flag{font-size:46px;line-height:1}
   .sheet-name{font-family:'Anton',sans-serif;font-size:28px;text-transform:uppercase;line-height:1}
   .sheet-meta{font-size:12px;color:var(--muted);letter-spacing:.06em;margin-top:3px}
-  .x{margin-left:auto;background:none;border:1px solid var(--line);color:var(--chalk);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px;line-height:34px;text-align:center;flex:none;transition:background .14s}
+  .x{margin-left:auto;background:none;border:1px solid var(--line);color:var(--chalk);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px;line-height:1;flex:none}
   .x:hover{background:rgba(243,242,233,.08)}
-  .sheet-body{padding:20px 22px}
-  .sh-section{margin-bottom:18px}
-  .sh-section:last-child{margin-bottom:0}
-  .sh-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:600}
-  .sh-text{font-size:14px;line-height:1.7}
-  .sh-mates{display:flex;flex-wrap:wrap;gap:6px}
-  .sh-mate{font-size:12px;background:rgba(39,180,92,.12);border:1px solid rgba(39,180,92,.25);color:var(--grass);border-radius:8px;padding:4px 10px}
-  .sh-note{font-size:11.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
+  .sheet-body{padding:20px 22px;font-size:15px;line-height:1.7;white-space:pre-wrap}
+  .sheet-note{padding:0 22px 20px;font-size:11.5px;color:var(--muted);line-height:1.5}
+  .spinner{width:30px;height:30px;border:3px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite;margin:8px auto 14px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .loading{text-align:center;color:var(--muted)}
+  .err{color:var(--muted)}
 
-  /* TOAST */
-  #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);z-index:99;background:var(--panel-2);border:1px solid var(--line);color:var(--chalk);border-radius:999px;padding:10px 22px;font-size:13px;font-weight:600;opacity:0;transition:opacity .22s,transform .22s;pointer-events:none;white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,.4)}
-  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-  footer{text-align:center;color:var(--muted);font-size:13px;line-height:1.7;margin-top:42px}
-  footer b{color:var(--chalk);font-weight:600}
-
-  @media(max-width:520px){
-    .grid{grid-template-columns:1fr}
-    .pname{font-size:23px}
-    .controls{flex-direction:column;align-items:flex-start}
-    .sort-tabs{align-self:stretch}
-    .sort-tab{flex:1;text-align:center}
-    .search-row{flex-wrap:wrap}
-  }
-  @media(prefers-reduced-motion:reduce){
-    .crest{animation:none}
-    .revealed .card{animation:none;opacity:1;transform:none}
-  }
+  @media (max-width:520px){.grid{grid-template-columns:1fr}.pname{font-size:23px}}
+  @media (prefers-reduced-motion:reduce){.crest{animation:none}.revealed .card{animation:none;opacity:1;transform:none}.spinner{animation:none}}
 </style>
 </head>
 <body>
 
-<div id="intro">
-  <div class="crest">⚽</div>
-  <div class="eyebrow">Office sweepstake · 2026</div>
-  <h1 class="intro-title">The <em>World&nbsp;Cup</em><br>Draw</h1>
-  <p class="intro-sub">16 of us. 48 teams. Everyone gets one heavyweight, one outsider, and one wildcard — drawn fairly by FIFA ranking. Press to reveal the draw.</p>
-  <button class="kick" id="kick">Make the draw</button>
-  <button class="skip-link" id="skip">Skip to draw →</button>
-</div>
-
-<div id="stage">
-  <div class="stage-label">Drawing the teams…</div>
-  <div class="reel">
-    <div class="reel-flag" id="reelFlag">⚽</div>
-    <div class="reel-name" id="reelName">—</div>
-  </div>
-  <div class="stage-foot">Out of the pot they come…</div>
-</div>
-
-<div class="wrap pre-reveal" id="wrap">
-  <header>
-    <div class="h-crest">⚽</div>
-    <h1>The <em>World Cup</em> Draw</h1>
-    <p class="tag">16 players · 48 teams · 3 each</p><br>
-    <span class="stamp">Drawn &amp; locked · 11 Jun 2026</span>
-    <div class="rule"></div>
-    <p class="fair">Fair by design: all 48 teams ranked by their <b>official FIFA world ranking</b>, split into three pots of 16. Everyone drawn one team from each pot at random. Rankings on every card so you can check the maths.</p>
-  </header>
-
-  <div class="stats" id="stats"></div>
-
-  <div class="controls">
-    <div class="key">
-      <span><i class="dot s"></i>Heavyweight</span>
-      <span><i class="dot m"></i>Outsider</span>
-      <span><i class="dot l"></i>Wildcard</span>
-    </div>
-    <div class="sort-tabs">
-      <button class="sort-tab active" data-sort="rank">Hand strength</button>
-      <button class="sort-tab" data-sort="name">Name A–Z</button>
-    </div>
+  <div id="intro">
+    <div class="crest">⚽</div>
+    <div class="eyebrow">Office sweepstake · 2026</div>
+    <h1 class="intro-title">The <em>World&nbsp;Cup</em><br>Draw</h1>
+    <p class="intro-sub">16 of us. 48 teams. Everyone gets one heavyweight, one outsider, and one wildcard — drawn fairly by FIFA ranking. Press to make the draw.</p>
+    <button class="kick" id="kick">Make the draw</button>
   </div>
 
-  <div class="search-row">
+  <div id="stage">
+    <div class="stage-label">Drawing the teams…</div>
+    <div class="reel"><div class="reel-flag" id="reelFlag">⚽</div><div class="reel-name" id="reelName">—</div></div>
+    <div class="stage-foot">Out of the pot they come…</div>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <div class="h-crest">⚽</div>
+      <h1>The <em>World Cup</em> Draw</h1>
+      <p class="tag">16 players · 48 teams · 3 each</p><br>
+      <span class="stamp">Drawn &amp; locked · 11 Jun 2026</span>
+      <div class="rule"></div>
+      <p class="fair">Fair by design: all 48 teams were ranked by their <b>official FIFA world ranking</b>, then split into three pots of 16 — top 16, middle 16, bottom 16. Everyone was drawn one team from each pot at random. Rankings are shown on every card so you can check the maths.</p>
+    </header>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="bar">
+      <div class="key">
+        <span><i class="dot s"></i>Heavyweight</span>
+        <span><i class="dot m"></i>Outsider</span>
+        <span><i class="dot l"></i>Wildcard</span>
+      </div>
+    </div>
+
     <div class="search">
-      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input id="find" type="text" placeholder="Find your name…" autocomplete="off" aria-label="Find your name">
     </div>
-    <div class="view-btns">
-      <button class="view-btn active" id="viewCards" title="Card view">
-        <svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1" fill="currentColor" stroke="none"/><rect x="9" y="1" width="6" height="6" rx="1" fill="currentColor" stroke="none"/><rect x="1" y="9" width="6" height="6" rx="1" fill="currentColor" stroke="none"/><rect x="9" y="9" width="6" height="6" rx="1" fill="currentColor" stroke="none"/></svg>
-      </button>
-      <button class="view-btn" id="viewGroups" title="Group view">
-        <svg viewBox="0 0 16 16"><path d="M2 4h12M2 8h12M2 12h12"/></svg>
-      </button>
-    </div>
-  </div>
 
-  <div id="card-view">
     <div class="grid" id="grid"></div>
+
+    <footer>
+      <p>Tap any team for a quick rundown. <b>FIFA #</b> = world ranking, <b>Grp</b> = World Cup group. Lower ranking number = stronger side.</p>
+      <p style="margin-top:8px">Pots tiered by FIFA ranking · drawn at random · no re-rolls 🏅</p>
+    </footer>
   </div>
-  <div id="group-view"></div>
 
-  <footer>
-    <p>Tap any team for a quick rundown. <b>FIFA #</b> = world ranking, <b>Grp</b> = World Cup group. Lower number = stronger.</p>
-    <p style="margin-top:8px">Pots tiered by FIFA ranking · drawn at random · no re-rolls 🏅</p>
-  </footer>
-</div>
-
-<!-- MODAL -->
-<div id="modal">
-  <div class="sheet">
-    <div class="sheet-top">
-      <span class="sheet-flag" id="mFlag">⚽</span>
-      <div>
-        <div class="sheet-name" id="mName"></div>
-        <div class="sheet-meta" id="mMeta"></div>
+  <div id="modal">
+    <div class="sheet">
+      <div class="sheet-top">
+        <span class="sheet-flag" id="mFlag">⚽</span>
+        <div><div class="sheet-name" id="mName">Team</div><div class="sheet-meta" id="mMeta"></div></div>
+        <button class="x" id="mClose" aria-label="Close">×</button>
       </div>
-      <button class="x" id="mClose" aria-label="Close">×</button>
+      <div class="sheet-body" id="mBody"></div>
+      <div class="sheet-note">Strength read is based on the team's official FIFA world ranking.</div>
     </div>
-    <div class="sheet-body" id="mBody"></div>
   </div>
-</div>
 
-<div id="toast"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
+  <script>
+    const TEAMS = {
+      "France":{f:"🇫🇷",r:1,g:"I"},"Spain":{f:"🇪🇸",r:2,g:"H"},"Argentina":{f:"🇦🇷",r:3,g:"J"},"England":{f:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",r:4,g:"L"},
+      "Portugal":{f:"🇵🇹",r:5,g:"K"},"Brazil":{f:"🇧🇷",r:6,g:"C"},"Netherlands":{f:"🇳🇱",r:7,g:"F"},"Morocco":{f:"🇲🇦",r:8,g:"C"},
+      "Belgium":{f:"🇧🇪",r:9,g:"G"},"Germany":{f:"🇩🇪",r:10,g:"E"},"Croatia":{f:"🇭🇷",r:11,g:"L"},"Colombia":{f:"🇨🇴",r:13,g:"K"},
+      "Senegal":{f:"🇸🇳",r:14,g:"I"},"Mexico":{f:"🇲🇽",r:15,g:"A"},"USA":{f:"🇺🇸",r:16,g:"D"},"Uruguay":{f:"🇺🇾",r:17,g:"H"},
+      "Japan":{f:"🇯🇵",r:18,g:"F"},"Switzerland":{f:"🇨🇭",r:19,g:"B"},"Iran":{f:"🇮🇷",r:21,g:"G"},"Turkey":{f:"🇹🇷",r:22,g:"D"},
+      "Ecuador":{f:"🇪🇨",r:23,g:"E"},"Austria":{f:"🇦🇹",r:24,g:"J"},"South Korea":{f:"🇰🇷",r:25,g:"A"},"Australia":{f:"🇦🇺",r:27,g:"D"},
+      "Algeria":{f:"🇩🇿",r:28,g:"J"},"Egypt":{f:"🇪🇬",r:29,g:"G"},"Canada":{f:"🇨🇦",r:30,g:"B"},"Norway":{f:"🇳🇴",r:31,g:"I"},
+      "Panama":{f:"🇵🇦",r:33,g:"L"},"Ivory Coast":{f:"🇨🇮",r:34,g:"E"},"Sweden":{f:"🇸🇪",r:38,g:"F"},"Paraguay":{f:"🇵🇾",r:40,g:"D"},
+      "Czechia":{f:"🇨🇿",r:41,g:"A"},"Scotland":{f:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",r:43,g:"C"},"Tunisia":{f:"🇹🇳",r:44,g:"F"},"DR Congo":{f:"🇨🇩",r:46,g:"K"},
+      "Uzbekistan":{f:"🇺🇿",r:50,g:"K"},"Qatar":{f:"🇶🇦",r:55,g:"B"},"Iraq":{f:"🇮🇶",r:57,g:"I"},"South Africa":{f:"🇿🇦",r:60,g:"A"},
+      "Saudi Arabia":{f:"🇸🇦",r:61,g:"H"},"Jordan":{f:"🇯🇴",r:63,g:"J"},"Bosnia":{f:"🇧🇦",r:65,g:"B"},"Cape Verde":{f:"🇨🇻",r:69,g:"H"},
+      "Ghana":{f:"🇬🇭",r:74,g:"L"},"Curacao":{f:"🇨🇼",r:82,g:"E"},"Haiti":{f:"🇭🇹",r:83,g:"C"},"New Zealand":{f:"🇳🇿",r:85,g:"G"}
+    };
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
-<script>
-// ── DATA ─────────────────────────────────────────────────────────────────────
-const TEAMS = {
-  "France":{f:"🇫🇷",r:1,g:"I"},"Spain":{f:"🇪🇸",r:2,g:"H"},"Argentina":{f:"🇦🇷",r:3,g:"J"},"England":{f:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",r:4,g:"L"},
-  "Portugal":{f:"🇵🇹",r:5,g:"K"},"Brazil":{f:"🇧🇷",r:6,g:"C"},"Netherlands":{f:"🇳🇱",r:7,g:"F"},"Morocco":{f:"🇲🇦",r:8,g:"C"},
-  "Belgium":{f:"🇧🇪",r:9,g:"G"},"Germany":{f:"🇩🇪",r:10,g:"E"},"Croatia":{f:"🇭🇷",r:11,g:"L"},"Colombia":{f:"🇨🇴",r:13,g:"K"},
-  "Senegal":{f:"🇸🇳",r:14,g:"I"},"Mexico":{f:"🇲🇽",r:15,g:"A"},"USA":{f:"🇺🇸",r:16,g:"D"},"Uruguay":{f:"🇺🇾",r:17,g:"H"},
-  "Japan":{f:"🇯🇵",r:18,g:"F"},"Switzerland":{f:"🇨🇭",r:19,g:"B"},"Iran":{f:"🇮🇷",r:21,g:"G"},"Turkey":{f:"🇹🇷",r:22,g:"D"},
-  "Ecuador":{f:"🇪🇨",r:23,g:"E"},"Austria":{f:"🇦🇹",r:24,g:"J"},"South Korea":{f:"🇰🇷",r:25,g:"A"},"Australia":{f:"🇦🇺",r:27,g:"D"},
-  "Algeria":{f:"🇩🇿",r:28,g:"J"},"Egypt":{f:"🇪🇬",r:29,g:"G"},"Canada":{f:"🇨🇦",r:30,g:"B"},"Norway":{f:"🇳🇴",r:31,g:"I"},
-  "Panama":{f:"🇵🇦",r:33,g:"L"},"Ivory Coast":{f:"🇨🇮",r:34,g:"E"},"Sweden":{f:"🇸🇪",r:38,g:"F"},"Paraguay":{f:"🇵🇾",r:40,g:"D"},
-  "Czechia":{f:"🇨🇿",r:41,g:"A"},"Scotland":{f:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",r:43,g:"C"},"Tunisia":{f:"🇹🇳",r:44,g:"F"},"DR Congo":{f:"🇨🇩",r:46,g:"K"},
-  "Uzbekistan":{f:"🇺🇿",r:50,g:"K"},"Qatar":{f:"🇶🇦",r:55,g:"B"},"Iraq":{f:"🇮🇶",r:57,g:"I"},"South Africa":{f:"🇿🇦",r:60,g:"A"},
-  "Saudi Arabia":{f:"🇸🇦",r:61,g:"H"},"Jordan":{f:"🇯🇴",r:63,g:"J"},"Bosnia":{f:"🇧🇦",r:65,g:"B"},"Cape Verde":{f:"🇨🇻",r:69,g:"H"},
-  "Ghana":{f:"🇬🇭",r:74,g:"L"},"Curacao":{f:"🇨🇼",r:82,g:"E"},"Haiti":{f:"🇭🇹",r:83,g:"C"},"New Zealand":{f:"🇳🇿",r:85,g:"G"}
-};
+    const DRAW = [
+      {name:"Millie",strong:"USA",mid:"Sweden",weak:"Saudi Arabia"},
+      {name:"Bianca",strong:"Netherlands",mid:"South Korea",weak:"Jordan"},
+      {name:"Shaune",strong:"Senegal",mid:"Australia",weak:"Cape Verde"},
+      {name:"Jonathan",strong:"Spain",mid:"Austria",weak:"Czechia"},
+      {name:"Jemma",strong:"Colombia",mid:"Turkey",weak:"Haiti"},
+      {name:"Romney",strong:"Portugal",mid:"Egypt",weak:"Uzbekistan"},
+      {name:"Ally",strong:"Germany",mid:"Japan",weak:"Tunisia"},
+      {name:"Ronelle",strong:"France",mid:"Ecuador",weak:"DR Congo"},
+      {name:"Phume",strong:"Morocco",mid:"Paraguay",weak:"Iraq"},
+      {name:"Avi",strong:"Belgium",mid:"Iran",weak:"South Africa"},
+      {name:"Melanie",strong:"Uruguay",mid:"Algeria",weak:"Bosnia"},
+      {name:"Re",strong:"Croatia",mid:"Panama",weak:"Ghana"},
+      {name:"Xara",strong:"England",mid:"Norway",weak:"Qatar"},
+      {name:"Lisa",strong:"Mexico",mid:"Canada",weak:"Curacao"},
+      {name:"Quanita",strong:"Brazil",mid:"Ivory Coast",weak:"New Zealand"},
+      {name:"Taryn",strong:"Argentina",mid:"Switzerland",weak:"Scotland"}
+    ];
 
-const DRAW = [
-  {name:"Millie",   strong:"USA",         mid:"Sweden",      weak:"Saudi Arabia"},
-  {name:"Bianca",   strong:"Netherlands", mid:"South Korea", weak:"Jordan"},
-  {name:"Shaune",   strong:"Senegal",     mid:"Australia",   weak:"Cape Verde"},
-  {name:"Jonathan", strong:"Spain",       mid:"Austria",     weak:"Czechia"},
-  {name:"Jemma",    strong:"Colombia",    mid:"Turkey",      weak:"Haiti"},
-  {name:"Romney",   strong:"Portugal",    mid:"Egypt",       weak:"Uzbekistan"},
-  {name:"Ally",     strong:"Germany",     mid:"Japan",       weak:"Tunisia"},
-  {name:"Ronelle",  strong:"France",      mid:"Ecuador",     weak:"DR Congo"},
-  {name:"Phume",    strong:"Morocco",     mid:"Paraguay",    weak:"Iraq"},
-  {name:"Avi",      strong:"Belgium",     mid:"Iran",        weak:"South Africa"},
-  {name:"Melanie",  strong:"Uruguay",     mid:"Algeria",     weak:"Bosnia"},
-  {name:"Re",       strong:"Croatia",     mid:"Panama",      weak:"Ghana"},
-  {name:"Xara",     strong:"England",     mid:"Norway",      weak:"Qatar"},
-  {name:"Lisa",     strong:"Mexico",      mid:"Canada",      weak:"Curacao"},
-  {name:"Quanita",  strong:"Brazil",      mid:"Ivory Coast", weak:"New Zealand"},
-  {name:"Taryn",    strong:"Argentina",   mid:"Switzerland", weak:"Scotland"}
-];
+    const T = n => TEAMS[n] || {f:"⚽",r:99,g:"?"};
 
-const T = n => TEAMS[n] || {f:"⚽",r:99,g:"?"};
+    const scored = DRAW.map(p => ({name:p.name, sum:T(p.strong).r+T(p.mid).r+T(p.weak).r}));
+    const order = [...scored].sort((a,b)=>a.sum-b.sum);
+    const powerRank = {}; order.forEach((p,i)=>powerRank[p.name]=i+1);
+    const dream = order[0], tough = order[order.length-1];
 
-// ── HAND STRENGTH ─────────────────────────────────────────────────────────────
-const scored = DRAW.map(p => ({name:p.name, sum:T(p.strong).r + T(p.mid).r + T(p.weak).r}));
-const byStrength = [...scored].sort((a,b) => a.sum - b.sum);
-const powerRank = {};
-byStrength.forEach((p,i) => powerRank[p.name] = i + 1);
-const dream = byStrength[0];
-const tough  = byStrength[byStrength.length - 1];
+    document.getElementById('stats').innerHTML =
+      `<div class="stat dream"><div class="lab">Dream draw</div><div class="who">${dream.name}</div><div class="sub">strongest hand of 16</div></div>
+       <div class="stat tough"><div class="lab">Toughest draw</div><div class="who">${tough.name}</div><div class="sub">all to play for</div></div>`;
 
-// ── STATS ─────────────────────────────────────────────────────────────────────
-(function buildStats(){
-  const dp = DRAW.find(p => p.name === dream.name);
-  const tp = DRAW.find(p => p.name === tough.name);
-  document.getElementById('stats').innerHTML =
-    `<div class="stat dream">
-       <div class="lab">Dream draw</div>
-       <div class="who">${dream.name}</div>
-       <div class="flags">${T(dp.strong).f} ${T(dp.mid).f} ${T(dp.weak).f}</div>
-       <div class="sub">strongest hand of 16</div>
-     </div>
-     <div class="stat tough">
-       <div class="lab">Toughest draw</div>
-       <div class="who">${tough.name}</div>
-       <div class="flags">${T(tp.strong).f} ${T(tp.mid).f} ${T(tp.weak).f}</div>
-       <div class="sub">all to play for</div>
-     </div>`;
-})();
-
-// ── SORT ──────────────────────────────────────────────────────────────────────
-let currentSort = 'rank';
-
-document.querySelectorAll('.sort-tab').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.sort-tab').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentSort = btn.dataset.sort;
-    renderCards();
-  });
-});
-
-function sortedDraw() {
-  const d = [...DRAW];
-  if (currentSort === 'name') return d.sort((a,b) => a.name.localeCompare(b.name));
-  return d.sort((a,b) => powerRank[a.name] - powerRank[b.name]);
-}
-
-// ── CARDS ─────────────────────────────────────────────────────────────────────
-const tierLabel = {s:"Heavyweight pot",m:"Outsider pot",l:"Wildcard pot"};
-
-function teamRowHTML(t, cls, label) {
-  const d = T(t);
-  return `<div class="row" data-team="${t}" data-tier="${cls}">
-    <span class="flag">${d.f}</span>
-    <span class="team"><b>${t}</b><span class="meta">FIFA #${d.r} · Grp ${d.g}</span></span>
-    <span class="pill ${cls}">${label}</span>
-  </div>`;
-}
-
-function renderCards() {
-  const sd = sortedDraw();
-  document.getElementById('grid').innerHTML =
-    sd.map((p, i) =>
-      `<div class="card" data-name="${p.name.toLowerCase()}" style="animation-delay:${i*45}ms">
-        <div class="card-top">
-          <span class="pname">${p.name}</span>
-          <span class="pnum">#${String(powerRank[p.name]).padStart(2,'0')}</span>
-        </div>
+    const grid = document.getElementById('grid');
+    const teamRow = (t,cls,label) => {
+      const d = T(t);
+      return `<div class="row" data-team="${t}" data-tier="${cls}"><span class="flag">${d.f}</span><span class="team"><b>${t}</b><span class="meta">FIFA #${d.r} · Grp ${d.g}</span></span><span class="pill ${cls}">${label}</span></div>`;
+    };
+    grid.innerHTML = DRAW.map((p,i)=>`
+      <div class="card" data-name="${p.name.toLowerCase()}" style="animation-delay:${i*55}ms">
+        <div class="card-top"><span class="pname">${p.name}</span><span class="pnum">#${String(i+1).padStart(2,'0')}</span></div>
         <div class="rows">
-          ${teamRowHTML(p.strong,'s','Heavyweight')}
-          ${teamRowHTML(p.mid,   'm','Outsider')}
-          ${teamRowHTML(p.weak,  'l','Wildcard')}
+          ${teamRow(p.strong,'s','Heavyweight')}
+          ${teamRow(p.mid,'m','Outsider')}
+          ${teamRow(p.weak,'l','Wildcard')}
         </div>
-        <div class="hand">
-          <span>Hand rank · <b>#${powerRank[p.name]} of 16</b></span>
-          <button class="share-btn" data-share="${p.name}">
-            <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
-            Share
-          </button>
-        </div>
-      </div>`
-    ).join('') +
-    '<div class="empty" id="empty" style="display:none">No one by that name in the draw.</div>';
-}
+        <div class="hand"><span>Hand strength · <b>#${powerRank[p.name]} of 16</b></span><span class="tap">tap a team ↑</span></div>
+      </div>`).join('') + '<div class="empty" id="empty" style="display:none">No one by that name in the draw.</div>';
 
-renderCards();
-
-// ── SINGLE DELEGATED LISTENER ON GRID ────────────────────────────────────────
-document.getElementById('grid').addEventListener('click', function(e) {
-  const row = e.target.closest('.row');
-  if (row) { dismissIntro(); openTeam(row.dataset.team, row.dataset.tier); return; }
-  const sb = e.target.closest('.share-btn');
-  if (sb) { shareCard(sb.dataset.share); }
-});
-
-// ── SHARE ─────────────────────────────────────────────────────────────────────
-function shareCard(name) {
-  const p = DRAW.find(d => d.name === name);
-  if (!p) return;
-  const text =
-    `⚽ ${name}'s World Cup 2026 draw\n` +
-    `🏆 ${T(p.strong).f} ${p.strong} (Heavyweight)\n` +
-    `🌟 ${T(p.mid).f} ${p.mid} (Outsider)\n` +
-    `🎲 ${T(p.weak).f} ${p.weak} (Wildcard)\n` +
-    `Hand rank: #${powerRank[name]} of 16`;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text).then(() => showToast('📋 Copied to clipboard!'));
-  } else {
-    showToast("Couldn't copy — try manually");
-  }
-}
-
-// ── TOAST ─────────────────────────────────────────────────────────────────────
-let toastTimer;
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
-}
-
-// ── TEAM MODAL ────────────────────────────────────────────────────────────────
-const modal = document.getElementById('modal');
-
-function band(r) {
-  if (r <= 10) return "One of the genuine favourites — a heavyweight that could go all the way.";
-  if (r <= 20) return "A strong, dangerous side, capable of a deep run.";
-  if (r <= 32) return "A proper outsider — could spring a surprise on their day.";
-  return "A long shot — here for the ride, and maybe to play spoiler.";
-}
-
-function openTeam(team, tier) {
-  const d = T(team);
-  // office players who also have a team in the same group
-  const mates = DRAW
-    .filter(p => [p.strong, p.mid, p.weak].some(tt => T(tt).g === d.g && tt !== team))
-    .map(p => p.name);
-  const uniqueMates = [...new Set(mates)];
-
-  document.getElementById('mFlag').textContent = d.f;
-  document.getElementById('mName').textContent = team;
-  document.getElementById('mMeta').textContent = `FIFA #${d.r} · World Cup Group ${d.g}`;
-
-  let html =
-    `<div class="sh-section">
-       <div class="sh-label">Scouting report</div>
-       <div class="sh-text">${band(d.r)}</div>
-     </div>
-     <div class="sh-section">
-       <div class="sh-label">Drawn from</div>
-       <div class="sh-text">${tierLabel[tier] || ''} (${tier==='s'?'top 16':tier==='m'?'middle 16':'bottom 16'})</div>
-     </div>`;
-
-  if (uniqueMates.length > 0) {
-    html += `<div class="sh-section">
-       <div class="sh-label">Office teams also in Group ${d.g}</div>
-       <div class="sh-mates">${uniqueMates.map(m => `<span class="sh-mate">${m}</span>`).join('')}</div>
-     </div>`;
-  } else {
-    html += `<div class="sh-section">
-       <div class="sh-label">Group ${d.g}</div>
-       <div class="sh-text" style="color:var(--muted);font-size:13px">No other office teams in this group.</div>
-     </div>`;
-  }
-
-  html += `<div class="sh-note">Strength read based on official FIFA world ranking. Lower number = stronger.</div>`;
-
-  document.getElementById('mBody').innerHTML = html;
-  modal.classList.add('open');
-}
-
-function closeModal() { modal.classList.remove('open'); }
-document.getElementById('mClose').addEventListener('click', closeModal);
-modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-// ── GROUP VIEW ────────────────────────────────────────────────────────────────
-(function buildGroupView() {
-  const groups = {};
-  Object.entries(TEAMS).forEach(([name, data]) => {
-    if (!groups[data.g]) groups[data.g] = [];
-    groups[data.g].push(name);
-  });
-
-  const ownerOf = {};
-  DRAW.forEach(p => { ownerOf[p.strong] = p.name; ownerOf[p.mid] = p.name; ownerOf[p.weak] = p.name; });
-
-  function getTier(team) {
-    for (const p of DRAW) {
-      if (p.strong === team) return 's';
-      if (p.mid    === team) return 'm';
-      if (p.weak   === team) return 'l';
+    // team info modal (static, no login needed)
+    const modal=document.getElementById('modal'), mFlag=document.getElementById('mFlag'), mName=document.getElementById('mName'), mMeta=document.getElementById('mMeta'), mBody=document.getElementById('mBody');
+    const tierName={s:"Heavyweight pot (top 16)",m:"Outsider pot (middle 16)",l:"Wildcard pot (bottom 16)"};
+    function band(r){
+      if(r<=10) return "One of the genuine favourites — a heavyweight that could go all the way.";
+      if(r<=20) return "A strong, dangerous side, capable of a deep run.";
+      if(r<=32) return "A proper outsider — could spring a surprise on their day.";
+      return "A long shot — here for the ride, and maybe to play spoiler.";
     }
-    return 'l';
-  }
+    function openTeam(team,tier){
+      const d=T(team);
+      mFlag.textContent=d.f; mName.textContent=team; mMeta.textContent=`FIFA world ranking #${d.r} · Group ${d.g}`;
+      mBody.textContent=`${band(d.r)}\n\nDrawn from: ${tierName[tier]||""}.\nFirst-round opponents come from World Cup Group ${d.g}.`;
+      modal.classList.add('open');
+    }
+    grid.addEventListener('click',e=>{const row=e.target.closest('.row');if(row)openTeam(row.dataset.team,row.dataset.tier);});
+    function closeModal(){modal.classList.remove('open');}
+    document.getElementById('mClose').addEventListener('click',closeModal);
+    modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
+    document.addEventListener('keydown',e=>{if(e.key==="Escape")closeModal();});
 
-  const html = Object.keys(groups).sort().map(grp => {
-    const teams = groups[grp].sort((a,b) => T(a).r - T(b).r);
-    const owned = teams.filter(t => ownerOf[t]).length;
-    return `<div class="grp-card">
-      <div class="grp-head">
-        <span class="grp-label">Group ${grp}</span>
-        <span class="grp-count">${owned} in the draw</span>
-      </div>
-      <div class="grp-teams">
-        ${teams.map(t => {
-          const tier = getTier(t);
-          return `<div class="grp-team" data-team="${t}" data-tier="${tier}">
-            <span class="grp-flag">${T(t).f}</span>
-            <span class="grp-name">${t}</span>
-            <span class="grp-owner ${ownerOf[t] ? '' : 'nobody'}">${ownerOf[t] || '—'}</span>
-          </div>`;
-        }).join('')}
-      </div>
-    </div>`;
-  }).join('');
+    // ceremony
+    const allTeams=Object.keys(TEAMS), reelFlag=document.getElementById('reelFlag'), reelName=document.getElementById('reelName');
+    function reveal(){
+      const intro=document.getElementById('intro'), stage=document.getElementById('stage');
+      intro.classList.add('gone'); stage.classList.add('show');
+      const spin=setInterval(()=>{const t=allTeams[Math.floor(Math.random()*allTeams.length)];reelFlag.textContent=TEAMS[t].f;reelName.textContent=t;},90);
+      setTimeout(()=>{
+        clearInterval(spin); reelFlag.textContent="⚽"; reelName.textContent="Locked in!";
+        document.querySelector('.stage-foot').textContent="The draw is made.";
+        setTimeout(()=>{
+          document.querySelector('.wrap').classList.add('revealed');
+          stage.classList.add('fade');
+          setTimeout(()=>stage.classList.remove('show','fade'),500);
+          try{
+            if(typeof confetti==='function'){
+              const burst=x=>confetti({particleCount:90,spread:75,origin:{x,y:.25},colors:['#F6C84C','#27B45C','#F3F2E9','#1E8A47']});
+              burst(.5); setTimeout(()=>{burst(.15);burst(.85);},220); setTimeout(()=>burst(.5),480);
+            }
+          }catch(e){}
+        },700);
+      },2600);
+    }
+    document.getElementById('kick').addEventListener('click',reveal);
 
-  document.getElementById('group-view').innerHTML = `<div class="group-grid">${html}</div>`;
-
-  // delegated click for group view teams
-  document.getElementById('group-view').addEventListener('click', function(e) {
-    const gt = e.target.closest('.grp-team');
-    if (gt) { dismissIntro(); openTeam(gt.dataset.team, gt.dataset.tier); }
-  });
-})();
-
-// ── VIEW TOGGLE ───────────────────────────────────────────────────────────────
-function setView(v) {
-  const cv = document.getElementById('card-view');
-  const gv = document.getElementById('group-view');
-  const bc = document.getElementById('viewCards');
-  const bg = document.getElementById('viewGroups');
-  if (v === 'cards') {
-    cv.classList.remove('hidden'); gv.classList.remove('active');
-    bc.classList.add('active');   bg.classList.remove('active');
-  } else {
-    cv.classList.add('hidden');   gv.classList.add('active');
-    bc.classList.remove('active'); bg.classList.add('active');
-  }
-}
-document.getElementById('viewCards').addEventListener('click',  () => setView('cards'));
-document.getElementById('viewGroups').addEventListener('click', () => setView('groups'));
-
-// ── SEARCH ────────────────────────────────────────────────────────────────────
-const find = document.getElementById('find');
-
-function applySearch(q) {
-  let shown = 0;
-  document.querySelectorAll('#grid .card').forEach(c => {
-    const match = !q || c.dataset.name.includes(q);
-    c.classList.toggle('dim', !!q && !match);
-    c.classList.toggle('hit', !!q && match);
-    if (match) shown++;
-  });
-  const em = document.getElementById('empty');
-  if (em) em.style.display = (q && shown === 0) ? 'block' : 'none';
-}
-
-find.addEventListener('focus', dismissIntro);
-find.addEventListener('input', () => {
-  dismissIntro();
-  applySearch(find.value.trim().toLowerCase());
-});
-
-// ── DISMISS INTRO ─────────────────────────────────────────────────────────────
-function dismissIntro() {
-  const intro = document.getElementById('intro');
-  if (!intro.classList.contains('gone')) {
-    intro.classList.add('gone');
-    document.getElementById('wrap').classList.remove('pre-reveal');
-  }
-}
-
-// ── CEREMONY ─────────────────────────────────────────────────────────────────
-const allTeams = Object.keys(TEAMS);
-const reelFlag = document.getElementById('reelFlag');
-const reelName = document.getElementById('reelName');
-
-function reveal() {
-  const intro = document.getElementById('intro');
-  const stage = document.getElementById('stage');
-  intro.classList.add('gone');
-  stage.classList.add('show');
-
-  const spin = setInterval(() => {
-    const t = allTeams[Math.floor(Math.random() * allTeams.length)];
-    reelFlag.textContent = TEAMS[t].f;
-    reelName.textContent = t;
-  }, 90);
-
-  setTimeout(() => {
-    clearInterval(spin);
-    reelFlag.textContent = "⚽";
-    reelName.textContent = "Locked in!";
-    document.querySelector('.stage-foot').textContent = "The draw is made.";
-    setTimeout(() => {
-      stage.classList.add('fade');
-      const w = document.getElementById('wrap');
-      w.classList.remove('pre-reveal');
-      w.classList.add('revealed');
-      const burst = x => confetti({particleCount:90, spread:75, origin:{x, y:.25}, colors:['#F6C84C','#27B45C','#F3F2E9','#1E8A47']});
-      burst(.5);
-      setTimeout(() => { burst(.15); burst(.85); }, 220);
-      setTimeout(() => burst(.5), 480);
-      setTimeout(() => stage.classList.remove('show','fade'), 500);
-    }, 700);
-  }, 2600);
-}
-
-document.getElementById('kick').addEventListener('click', reveal);
-document.getElementById('skip').addEventListener('click', dismissIntro);
-</script>
+    // search
+    const find=document.getElementById('find'), empty=document.getElementById('empty');
+    find.addEventListener('input',()=>{
+      const q=find.value.trim().toLowerCase(); let shown=0;
+      grid.querySelectorAll('.card').forEach(c=>{const match=!q||c.dataset.name.includes(q);c.classList.toggle('dim',!!q&&!match);c.classList.toggle('hit',!!q&&match);if(match)shown++;});
+      empty.style.display=(q&&shown===0)?'block':'none';
+    });
+  </script>
 </body>
 </html>
